@@ -1,6 +1,6 @@
 {
   "name": "react-big-calendar-rondak",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Calendar based on react-big-calendar",
   "author": {
     "name": "Demian Rosas",
@@ -50,8 +50,7 @@
     "tdd": "jest --watch",
     "release": "rollout",
     "prepublishOnly": "npm run build",
-    "prettier": "prettier '**/*js' !examples/bundle.js '!lib/**' --write ",
-    "precommit": "lint-staged"
+    "prettier": "prettier '**/*js' !examples/bundle.js '!lib/**' --write "
   },
   "lint-staged": {
     "src/**/*.js": "eslint",
