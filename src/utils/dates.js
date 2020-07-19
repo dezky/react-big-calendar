@@ -1,5 +1,6 @@
 /* eslint no-fallthrough: off */
 import * as dates from 'date-arithmetic'
+import moment from 'moment'
 
 export {
   milliseconds,
@@ -42,9 +43,12 @@ export function firstVisibleDay(date, localizer) {
 }
 
 export function lastVisibleDay(date, localizer) {
-  let endOfMonth = dates.endOf(date, 'month')
+  let _date = new moment(date)
+  let endOfMonth = _date.endOf('month')
+  // let endOfMonth = dates.endOf(date, 'month')
 
-  return dates.endOf(endOfMonth, 'week', localizer.startOfWeek())
+  // return dates.endOf(endOfMonth, 'week', localizer.startOfWeek())
+  return endOfMonth.endOf('week').toDate()
 }
 
 export function visibleDays(date, localizer) {
@@ -52,9 +56,12 @@ export function visibleDays(date, localizer) {
     last = lastVisibleDay(date, localizer),
     days = []
 
-  while (dates.lte(current, last, 'day')) {
-    days.push(current)
-    current = dates.add(current, 1, 'day')
+  let currentDate = new moment(current)
+
+  while (dates.lte(currentDate.toDate(), last, 'day')) {
+    days.push(currentDate.toDate())
+    currentDate.add(1, 'day')
+    //current = dates.add(current, 1, 'day')
   }
 
   return days

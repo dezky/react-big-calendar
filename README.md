@@ -1,17 +1,6 @@
 # react-big-calendar
 
-An events calendar component built for React and made for modern browsers (read: IE10+) and uses flexbox over the classic tables-ception approach.
-
-[**DEMO and Docs**](http://jquense.github.io/react-big-calendar/examples/index.html)
-
-Inspired by [Full Calendar](http://fullcalendar.io/).
-
-## Use and Setup
-
-`yarn add react-big-calendar` or `npm install --save react-big-calendar`
-
-Include `react-big-calendar/lib/css/react-big-calendar.css` for styles, and make sure your calendar's container
-element has a height, or the calendar won't be visible. To provide your own custom styling, see the [Custom Styling](#custom-styling) topic.
+This is a fork of https://github.com/jquense/react-big-calendar
 
 ## Starters
 
@@ -110,21 +99,6 @@ const MyCalendar = props => (
 )
 ```
 
-## Custom Styling
+## Build
 
-Out of the box, you can include the compiled CSS files and be up and running. But, sometimes, you may want to style
-Big Calendar to match your application styling. For this reason, SASS files are included with Big Calendar.
-
-
-```
-  @import 'react-big-calendar/lib/sass/styles';
-  @import 'react-big-calendar/lib/addons/dragAndDrop/styles'; // if using DnD
-```
-
-SASS implementation provides a `variables` file containing color and sizing variables that you can
-update to fit your application. _Note:_ Changing and/or overriding styles can cause rendering issues with your
-Big Calendar. Carefully test each change accordingly.
-
-## Join us on Reactiflux Discord
-
-Join us on [Reactiflux Discord](https://discord.gg/PPgj6tb) community under the channel #libraries if you have any questions.
+This project should be build on linux using Node v10.

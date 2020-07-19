@@ -8,9 +8,10 @@ import clsx from 'clsx';
 import invariant from 'invariant';
 import _assertThisInitialized from '@babel/runtime/helpers/esm/assertThisInitialized';
 import { findDOMNode } from 'react-dom';
-import { eq, add, startOf, endOf, lte, hours, minutes, seconds, milliseconds, lt, gte, month, max, min, gt, inRange as inRange$1 } from 'date-arithmetic';
+import { eq, add, startOf, lte, hours, minutes, seconds, milliseconds, lt, gte, month, max, min, gt, inRange as inRange$1, endOf } from 'date-arithmetic';
+import moment$1 from 'moment';
 import chunk from 'lodash-es/chunk';
-import remove from 'lodash-es/remove';
+import dropRight from 'lodash-es/dropRight';
 import getPosition from 'dom-helpers/position';
 import { request, cancel } from 'dom-helpers/animationFrame';
 import getOffset from 'dom-helpers/offset';
@@ -172,17 +173,23 @@ function firstVisibleDay(date, localizer) {
   return startOf(firstOfMonth, 'week', localizer.startOfWeek());
 }
 function lastVisibleDay(date, localizer) {
-  var endOfMonth = endOf(date, 'month');
-  return endOf(endOfMonth, 'week', localizer.startOfWeek());
+  var _date = new moment$1(date);
+
+  var endOfMonth = _date.endOf('month'); // let endOfMonth = dates.endOf(date, 'month')
+  // return dates.endOf(endOfMonth, 'week', localizer.startOfWeek())
+
+
+  return endOfMonth.endOf('week').toDate();
 }
 function visibleDays(date, localizer) {
   var current = firstVisibleDay(date, localizer),
-      last = lastVisibleDay(date, localizer),
+      last = lastVisibleDay(date),
       days = [];
+  var currentDate = new moment$1(current);
 
-  while (lte(current, last, 'day')) {
-    days.push(current);
-    current = add(current, 1, 'day');
+  while (lte(currentDate.toDate(), last, 'day')) {
+    days.push(currentDate.toDate());
+    currentDate.add(1, 'day'); //current = dates.add(current, 1, 'day')
   }
 
   return days;
@@ -2023,9 +2030,6 @@ var MonthView = /*#__PURE__*/function (_React$Component) {
         className = _this$props4.className,
         month = visibleDays(date, localizer),
         weeks = chunk(month, 7);
-    remove(weeks, function (value) {
-      return value.length !== 7;
-    });
     this._weekCount = weeks.length;
     return /*#__PURE__*/React.createElement("div", {
       className: clsx('rbc-month-view', className)
@@ -2041,7 +2045,8 @@ var MonthView = /*#__PURE__*/function (_React$Component) {
     var first = row[0];
     var last = row[row.length - 1];
     var HeaderComponent = components.header || Header;
-    return range(first, last, 'day').map(function (day, idx) {
+    var headerDays = range(first, last, 'day');
+    return dropRight(headerDays, headerDays.length - 7).map(function (day, idx) {
       return /*#__PURE__*/React.createElement("div", {
         key: 'header_' + idx,
         className: "rbc-header"
@@ -2164,7 +2169,7 @@ MonthView.propTypes = process.env.NODE_ENV !== "production" ? {
 MonthView.range = function (date, _ref4) {
   var localizer = _ref4.localizer;
   var start = firstVisibleDay(date, localizer);
-  var end = lastVisibleDay(date, localizer);
+  var end = lastVisibleDay(date);
   return {
     start: start,
     end: end
@@ -5094,7 +5099,7 @@ Calendar.propTypes = process.env.NODE_ENV !== "production" ? {
   slotPropGetter: PropTypes.func,
 
   /**
-   * Optionally provide a function that returns an object of props to be applied 
+   * Optionally provide a function that returns an object of props to be applied
    * to the time-slot group node. Useful to dynamically change the sizing of time nodes.
    * ```js
    * () => { style?: Object }
@@ -5195,7 +5200,7 @@ Calendar.propTypes = process.env.NODE_ENV !== "production" ? {
     timeGutterFormat: dateFormat,
 
     /**
-     * Toolbar header format for the Month view, e.g "2015 April"
+     * Toolbar header format for the Month view, e.g "2020 April"
      *
      */
     monthHeaderFormat: dateFormat,
@@ -5211,7 +5216,7 @@ Calendar.propTypes = process.env.NODE_ENV !== "production" ? {
     dayHeaderFormat: dateFormat,
 
     /**
-     * Toolbar header format for the Agenda view, e.g. "4/1/2015 – 5/1/2015"
+     * Toolbar header format for the Agenda view, e.g. "4/1/2020 – 5/1/2020"
      */
     agendaHeaderFormat: dateRangeFormat,
 

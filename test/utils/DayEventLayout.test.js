@@ -3,7 +3,7 @@ import { getSlotMetrics } from '../../src/utils/TimeSlots'
 import * as dates from '../../src/utils/dates'
 
 describe('getStyledEvents', () => {
-  const d = (...args) => new Date(2015, 3, 1, ...args)
+  const d = (...args) => new Date(2020, 3, 1, ...args)
   const min = dates.startOf(d(), 'day')
   const max = dates.endOf(d(), 'day')
   const slotMetrics = getSlotMetrics({ min, max, step: 30, timeslots: 4 })

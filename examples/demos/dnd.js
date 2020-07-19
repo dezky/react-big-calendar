@@ -109,7 +109,7 @@ class Dnd extends React.Component {
         onSelectSlot={this.newEvent}
         onDragStart={console.log}
         defaultView={Views.MONTH}
-        defaultDate={new Date(2015, 3, 12)}
+        defaultDate={new Date(2020, 3, 12)}
         popup={true}
         dragFromOutsideItem={
           this.state.displayDragItemInCell ? this.dragFromOutsideItem : null

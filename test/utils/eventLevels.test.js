@@ -249,7 +249,7 @@ describe('eventLevels', () => {
 })
 
 describe('inRange', () => {
-  const d = (...args) => new Date(2015, 3, ...args)
+  const d = (...args) => new Date(2020, 3, ...args)
 
   const rangeStart = new Date(2017, 4, 1)
   const rangeEnd = new Date(2017, 5, 1)

@@ -408,14 +408,14 @@
           id: 0,
           title: 'All Day Event very long title',
           allDay: !0,
-          start: new Date(2015, 3, 0),
-          end: new Date(2015, 3, 1),
+          start: new Date(2020, 3, 0),
+          end: new Date(2020, 3, 1),
         },
         {
           id: 1,
           title: 'Long Event',
-          start: new Date(2015, 3, 7),
-          end: new Date(2015, 3, 10),
+          start: new Date(2020, 3, 7),
+          end: new Date(2020, 3, 10),
         },
         {
           id: 2,
@@ -432,72 +432,72 @@
         {
           id: 4,
           title: 'Some Event',
-          start: new Date(2015, 3, 9, 0, 0, 0),
-          end: new Date(2015, 3, 10, 0, 0, 0),
+          start: new Date(2020, 3, 9, 0, 0, 0),
+          end: new Date(2020, 3, 10, 0, 0, 0),
         },
         {
           id: 5,
           title: 'Conference',
-          start: new Date(2015, 3, 11),
-          end: new Date(2015, 3, 13),
+          start: new Date(2020, 3, 11),
+          end: new Date(2020, 3, 13),
           desc: 'Big conference for important people',
         },
         {
           id: 6,
           title: 'Meeting',
-          start: new Date(2015, 3, 12, 10, 30, 0, 0),
-          end: new Date(2015, 3, 12, 12, 30, 0, 0),
+          start: new Date(2020, 3, 12, 10, 30, 0, 0),
+          end: new Date(2020, 3, 12, 12, 30, 0, 0),
           desc: 'Pre-meeting meeting, to prepare for the meeting',
         },
         {
           id: 7,
           title: 'Lunch',
-          start: new Date(2015, 3, 12, 12, 0, 0, 0),
-          end: new Date(2015, 3, 12, 13, 0, 0, 0),
+          start: new Date(2020, 3, 12, 12, 0, 0, 0),
+          end: new Date(2020, 3, 12, 13, 0, 0, 0),
           desc: 'Power lunch',
         },
         {
           id: 8,
           title: 'Meeting',
-          start: new Date(2015, 3, 12, 14, 0, 0, 0),
-          end: new Date(2015, 3, 12, 15, 0, 0, 0),
+          start: new Date(2020, 3, 12, 14, 0, 0, 0),
+          end: new Date(2020, 3, 12, 15, 0, 0, 0),
         },
         {
           id: 9,
           title: 'Happy Hour',
-          start: new Date(2015, 3, 12, 17, 0, 0, 0),
-          end: new Date(2015, 3, 12, 17, 30, 0, 0),
+          start: new Date(2020, 3, 12, 17, 0, 0, 0),
+          end: new Date(2020, 3, 12, 17, 30, 0, 0),
           desc: 'Most important meal of the day',
         },
         {
           id: 10,
           title: 'Dinner',
-          start: new Date(2015, 3, 12, 20, 0, 0, 0),
-          end: new Date(2015, 3, 12, 21, 0, 0, 0),
+          start: new Date(2020, 3, 12, 20, 0, 0, 0),
+          end: new Date(2020, 3, 12, 21, 0, 0, 0),
         },
         {
           id: 11,
           title: 'Birthday Party',
-          start: new Date(2015, 3, 13, 7, 0, 0),
-          end: new Date(2015, 3, 13, 10, 30, 0),
+          start: new Date(2020, 3, 13, 7, 0, 0),
+          end: new Date(2020, 3, 13, 10, 30, 0),
         },
         {
           id: 12,
           title: 'Late Night Event',
-          start: new Date(2015, 3, 17, 19, 30, 0),
-          end: new Date(2015, 3, 18, 2, 0, 0),
+          start: new Date(2020, 3, 17, 19, 30, 0),
+          end: new Date(2020, 3, 18, 2, 0, 0),
         },
         {
           id: 12.5,
           title: 'Late Same Night Event',
-          start: new Date(2015, 3, 17, 19, 30, 0),
-          end: new Date(2015, 3, 17, 23, 30, 0),
+          start: new Date(2020, 3, 17, 19, 30, 0),
+          end: new Date(2020, 3, 17, 23, 30, 0),
         },
         {
           id: 13,
           title: 'Multi-day Event',
-          start: new Date(2015, 3, 20, 19, 30, 0),
-          end: new Date(2015, 3, 22, 2, 0, 0),
+          start: new Date(2020, 3, 20, 19, 30, 0),
+          end: new Date(2020, 3, 22, 2, 0, 0),
         },
         {
           id: 14,
@@ -9971,18 +9971,18 @@ object-assign
                     name: 'custom',
                     raw: 'dateFormat',
                     description:
-                      'Toolbar header format for the Month view, e.g "2015 April"',
+                      'Toolbar header format for the Month view, e.g "2020 April"',
                     required: !1,
                   },
                   description:
-                    'Toolbar header format for the Month view, e.g "2015 April"',
+                    'Toolbar header format for the Month view, e.g "2020 April"',
                   required: !1,
                   name: 'monthHeaderFormat',
                   docblock:
-                    'Toolbar header format for the Month view, e.g "2015 April"',
+                    'Toolbar header format for the Month view, e.g "2020 April"',
                   doclets: {},
                   descriptionHtml:
-                    '<p>Toolbar header format for the Month view, e.g &quot;2015 April&quot;</p>\n',
+                    '<p>Toolbar header format for the Month view, e.g &quot;2020 April&quot;</p>\n',
                 },
                 dayRangeHeaderFormat: {
                   type: {
@@ -10025,18 +10025,18 @@ object-assign
                     name: 'custom',
                     raw: 'dateRangeFormat',
                     description:
-                      'Toolbar header format for the Agenda view, e.g. "4/1/2015 – 5/1/2015"',
+                      'Toolbar header format for the Agenda view, e.g. "4/1/2020 – 5/1/2020"',
                     required: !1,
                   },
                   description:
-                    'Toolbar header format for the Agenda view, e.g. "4/1/2015 – 5/1/2015"',
+                    'Toolbar header format for the Agenda view, e.g. "4/1/2020 – 5/1/2020"',
                   required: !1,
                   name: 'agendaHeaderFormat',
                   docblock:
-                    'Toolbar header format for the Agenda view, e.g. "4/1/2015 – 5/1/2015"',
+                    'Toolbar header format for the Agenda view, e.g. "4/1/2020 – 5/1/2020"',
                   doclets: {},
                   descriptionHtml:
-                    '<p>Toolbar header format for the Agenda view, e.g. &quot;4/1/2015 – 5/1/2015&quot;</p>\n',
+                    '<p>Toolbar header format for the Agenda view, e.g. &quot;4/1/2020 – 5/1/2020&quot;</p>\n',
                 },
                 selectRangeFormat: {
                   type: {
@@ -18079,11 +18079,11 @@ object-assign
           step: 60,
           showMultiDayTimes: !0,
           max: l.default.add(
-            l.default.endOf(new Date(2015, 17, 1), 'day'),
+            l.default.endOf(new Date(2020, 17, 1), 'day'),
             -1,
             'hours'
           ),
-          defaultDate: new Date(2015, 3, 1),
+          defaultDate: new Date(2020, 3, 1),
           localizer: n,
         })
       }
@@ -22685,7 +22685,7 @@ object-assign
                 events: this.state.events,
                 defaultView: i.default.Views.WEEK,
                 scrollToTime: new Date(1970, 1, 1, 6),
-                defaultDate: new Date(2015, 3, 12),
+                defaultDate: new Date(2020, 3, 12),
                 onSelectEvent: function(e) {
                   return alert(e.title)
                 },
@@ -22763,7 +22763,7 @@ object-assign
               rtl: t,
               events: l.default,
               culture: this.state.culture,
-              defaultDate: new Date(2015, 3, 1),
+              defaultDate: new Date(2020, 3, 1),
               localizer: n,
             })
           )
@@ -23115,7 +23115,7 @@ object-assign
               [3748, -21067776e5],
               [3402, -2076192e6],
               [2710, -20456064e5],
-              [1334, -20150208e5],
+              [1334, -20200208e5],
               [2741, -19844352e5],
               [3498, -19537632e5],
               [2980, -19230912e5],
@@ -23627,7 +23627,7 @@ object-assign
             popup: !0,
             events: i.default,
             localizer: n,
-            defaultDate: new Date(2015, 3, 1),
+            defaultDate: new Date(2020, 3, 1),
           })
         )
       }
@@ -23678,7 +23678,7 @@ object-assign
         return r.default.createElement(a.default, {
           events: i.default,
           localizer: n,
-          defaultDate: new Date(2015, 3, 1),
+          defaultDate: new Date(2020, 3, 1),
           defaultView: a.default.Views.AGENDA,
           dayPropGetter: c,
           slotPropGetter: s,
@@ -23756,7 +23756,7 @@ object-assign
           events: A.default,
           localizer: n,
           defaultView: c.default.Views.WEEK,
-          defaultDate: new Date(2015, 3, 1),
+          defaultDate: new Date(2020, 3, 1),
           views: { month: !0, week: p },
         })
       )
@@ -24725,7 +24725,7 @@ object-assign
           timeslots: 8,
           localizer: n,
           defaultView: a.default.Views.WEEK,
-          defaultDate: new Date(2015, 3, 12),
+          defaultDate: new Date(2020, 3, 12),
         })
       }
     ;(n.default = l), (e.exports = n.default)
@@ -24792,7 +24792,7 @@ object-assign
               onSelectSlot: this.newEvent,
               onDragStart: console.log,
               defaultView: c.default.Views.MONTH,
-              defaultDate: new Date(2015, 3, 12),
+              defaultDate: new Date(2020, 3, 12),
             })
           }),
           n
@@ -24958,7 +24958,7 @@ object-assign
                 onSelectSlot: this.newEvent,
                 onD: !0,
                 defaultView: A.default.Views.MONTH,
-                defaultDate: new Date(2015, 3, 12),
+                defaultDate: new Date(2020, 3, 12),
               })
             )
           }),
