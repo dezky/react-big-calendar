@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 import * as dates from './utils/dates'
 import chunk from 'lodash/chunk'
-import remove from 'lodash/remove'
+import dropRight from 'lodash/dropRight'
 
 import { navigate, views } from './utils/constants'
 import { notify } from './utils/helpers'
@@ -77,8 +77,6 @@ class MonthView extends React.Component {
     let { date, localizer, className } = this.props,
       month = dates.visibleDays(date, localizer),
       weeks = chunk(month, 7)
-
-    remove(weeks, value => value.length !== 7)
 
     this._weekCount = weeks.length
 
@@ -177,7 +175,9 @@ class MonthView extends React.Component {
     let last = row[row.length - 1]
     let HeaderComponent = components.header || Header
 
-    return dates.range(first, last, 'day').map((day, idx) => (
+    let headerDays = dates.range(first, last, 'day')
+
+    return dropRight(headerDays, headerDays.length - 7).map((day, idx) => (
       <div key={'header_' + idx} className="rbc-header">
         <HeaderComponent
           date={day}

@@ -494,9 +494,9 @@ class Calendar extends React.Component {
      * ```
      */
 	slotPropGetter: PropTypes.func,
-	
+
 	/**
-	 * Optionally provide a function that returns an object of props to be applied 
+	 * Optionally provide a function that returns an object of props to be applied
 	 * to the time-slot group node. Useful to dynamically change the sizing of time nodes.
 	 * ```js
 	 * () => { style?: Object }
@@ -597,7 +597,7 @@ class Calendar extends React.Component {
       timeGutterFormat: dateFormat,
 
       /**
-       * Toolbar header format for the Month view, e.g "2015 April"
+       * Toolbar header format for the Month view, e.g "2020 April"
        *
        */
       monthHeaderFormat: dateFormat,
@@ -613,7 +613,7 @@ class Calendar extends React.Component {
       dayHeaderFormat: dateFormat,
 
       /**
-       * Toolbar header format for the Agenda view, e.g. "4/1/2015 – 5/1/2015"
+       * Toolbar header format for the Agenda view, e.g. "4/1/2020 – 5/1/2020"
        */
       agendaHeaderFormat: dateRangeFormat,
 
