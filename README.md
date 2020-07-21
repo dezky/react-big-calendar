@@ -102,3 +102,9 @@ const MyCalendar = props => (
 ## Build
 
 This project should be build on linux using Node v10.
+
+## Install
+
+```
+npm install dezky/react-big-calendar
+```
