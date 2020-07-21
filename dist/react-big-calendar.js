@@ -16050,7 +16050,7 @@
         className: clsx('rbc-month-view', className)
       }, /*#__PURE__*/React__default.createElement("div", {
         className: "rbc-row rbc-month-header"
-      }, this.renderHeaders(weeks[0])), weeks.map(this.renderWeek), this.props.popup && this.renderOverlay());
+      }, this.renderHeaders(weeks[weeks.length - 1])), weeks.map(this.renderWeek), this.props.popup && this.renderOverlay());
     };
 
     _proto.renderHeaders = function renderHeaders(row) {
