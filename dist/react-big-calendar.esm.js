@@ -11,7 +11,7 @@ import { findDOMNode } from 'react-dom';
 import { eq, add, startOf, lte, hours, minutes, seconds, milliseconds, lt, gte, month, max, min, gt, inRange as inRange$1, endOf } from 'date-arithmetic';
 import moment$1 from 'moment';
 import chunk from 'lodash-es/chunk';
-import dropRight from 'lodash-es/dropRight';
+import uniq from 'lodash-es/uniq';
 import getPosition from 'dom-helpers/position';
 import { request, cancel } from 'dom-helpers/animationFrame';
 import getOffset from 'dom-helpers/offset';
@@ -203,12 +203,13 @@ function range(start, end, unit) {
     unit = 'day';
   }
 
-  var current = start,
-      days = [];
+  // let current = start,
+  var days = [];
+  var currentDate = new moment$1(start);
 
-  while (lte(current, end, unit)) {
-    days.push(current);
-    current = add(current, 1, unit);
+  while (lte(currentDate.toDate(), end, unit)) {
+    days.push(currentDate.toDate());
+    currentDate.add(1, unit); // current = dates.add(current, 1, unit)
   }
 
   return days;
@@ -2028,14 +2029,14 @@ var MonthView = /*#__PURE__*/function (_React$Component) {
         date = _this$props4.date,
         localizer = _this$props4.localizer,
         className = _this$props4.className,
-        month = visibleDays(date, localizer),
+        month = uniq(visibleDays(date, localizer)),
         weeks = chunk(month, 7);
     this._weekCount = weeks.length;
     return /*#__PURE__*/React.createElement("div", {
       className: clsx('rbc-month-view', className)
     }, /*#__PURE__*/React.createElement("div", {
       className: "rbc-row rbc-month-header"
-    }, this.renderHeaders(weeks[weeks.length - 1])), weeks.map(this.renderWeek), this.props.popup && this.renderOverlay());
+    }, this.renderHeaders(weeks[0])), weeks.map(this.renderWeek), this.props.popup && this.renderOverlay());
   };
 
   _proto.renderHeaders = function renderHeaders(row) {
@@ -2046,7 +2047,7 @@ var MonthView = /*#__PURE__*/function (_React$Component) {
     var last = row[row.length - 1];
     var HeaderComponent = components.header || Header;
     var headerDays = range(first, last, 'day');
-    return dropRight(headerDays, headerDays.length - 7).map(function (day, idx) {
+    return headerDays.map(function (day, idx) {
       return /*#__PURE__*/React.createElement("div", {
         key: 'header_' + idx,
         className: "rbc-header"

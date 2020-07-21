@@ -74,12 +74,15 @@ export function ceil(date, unit) {
 }
 
 export function range(start, end, unit = 'day') {
-  let current = start,
-    days = []
+  // let current = start,
+  let days = []
 
-  while (dates.lte(current, end, unit)) {
-    days.push(current)
-    current = dates.add(current, 1, unit)
+  let currentDate = new moment(start)
+
+  while (dates.lte(currentDate.toDate(), end, unit)) {
+    days.push(currentDate.toDate())
+    currentDate.add(1, unit)
+    // current = dates.add(current, 1, unit)
   }
 
   return days

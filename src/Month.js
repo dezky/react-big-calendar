@@ -5,7 +5,7 @@ import clsx from 'clsx'
 
 import * as dates from './utils/dates'
 import chunk from 'lodash/chunk'
-import dropRight from 'lodash/dropRight'
+import uniq from 'lodash/uniq'
 
 import { navigate, views } from './utils/constants'
 import { notify } from './utils/helpers'
@@ -75,7 +75,7 @@ class MonthView extends React.Component {
 
   render() {
     let { date, localizer, className } = this.props,
-      month = dates.visibleDays(date, localizer),
+      month = uniq(dates.visibleDays(date, localizer)),
       weeks = chunk(month, 7)
 
     this._weekCount = weeks.length
@@ -83,7 +83,7 @@ class MonthView extends React.Component {
     return (
       <div className={clsx('rbc-month-view', className)}>
         <div className="rbc-row rbc-month-header">
-          {this.renderHeaders(weeks[weeks.length - 1])}
+          {this.renderHeaders(weeks[0])}
         </div>
         {weeks.map(this.renderWeek)}
         {this.props.popup && this.renderOverlay()}
@@ -177,7 +177,7 @@ class MonthView extends React.Component {
 
     let headerDays = dates.range(first, last, 'day')
 
-    return dropRight(headerDays, headerDays.length - 7).map((day, idx) => (
+    return headerDays.map((day, idx) => (
       <div key={'header_' + idx} className="rbc-header">
         <HeaderComponent
           date={day}
